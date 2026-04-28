@@ -30,7 +30,7 @@ Python scripts for analyzing network traffic from PCAP files (Netflix, Google Me
 multipass start ec441
 
 # Transfer the project to the VM
-multipass transfer -r ~/Dev/EC441/ec441_final_project ec441:/home/ubuntu/
+multipass transfer -r ~/<path to proj>/ec441_final_project ec441:/home/ubuntu/
 
 # SSH into the VM
 multipass shell ec441
@@ -44,7 +44,7 @@ multipass stop ec441
 
 ## Scripts Overview
 
-All three scripts analyze PCAP files and can be run from the scripts directory:
+All scripts analyze PCAP files and can be run from the scripts directory:
 
 python <scipt file>.py <app name>           
 
