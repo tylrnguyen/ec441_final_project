@@ -1,5 +1,25 @@
 # EC441 Network Traffic Analysis
 
+## Project structure
+
+ec441_final_project/
+│
+├── README.md
+│
+├── data/
+│   ├── netflix.pcap
+│   ├── meet.pcap
+│   ├── discord.pcap
+│
+├── scripts/
+│   ├── analyze_protocols.py
+│   ├── packet_stats.py
+│   ├── dns_analysis.py
+│   ├── direction_analysis.py
+│   
+│
+└──results/
+
 Python scripts for analyzing network traffic from PCAP files (Netflix, Google Meet, Discord)
 
 ### VM Setup (Multipass)
