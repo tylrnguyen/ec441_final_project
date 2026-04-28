@@ -2,6 +2,9 @@
 
 ## Project structure
 
+## Project Structure
+
+```text
 ec441_final_project/
 │
 ├── README.md
@@ -16,14 +19,13 @@ ec441_final_project/
 │   ├── packet_stats.py
 │   ├── dns_analysis.py
 │   ├── direction_analysis.py
-│   
 │
-└──results/
+└── results/
 
 Python scripts for analyzing network traffic from PCAP files (Netflix, Google Meet, Discord)
 
 ### VM Setup (Multipass)
-```bash
+
 # Start the VM
 multipass start ec441
 
@@ -33,8 +35,11 @@ multipass transfer -r ~/Dev/EC441/ec441_final_project ec441:/home/ubuntu/
 # SSH into the VM
 multipass shell ec441
 
-# Navigate to scripts
+# Navigate to scripts within the VM
 cd /home/ubuntu/ec441_final_project/scripts
+
+# After you're finished, stop the VM in a separate terminal
+multipass stop ec441
 ```
 
 ## Scripts Overview
