@@ -57,3 +57,10 @@ Each script takes an app name as argument: `netflix`, `meet`, or `discord`.
 - Shows if no DNS traffic was captured
 
 **Why:** Reveals tracking services, CDN endpoints, and cloud services that an application depends on. Useful for privacy analysis and understanding service dependencies.
+
+### direction_analysis,py
+**What it analyzes:** 
+Determines whether packets are upload (client to server) or download (server to client) and calculates the percentage
+
+**Why:**
+Shows communication patterns, not just how data is sent but who is sending it
