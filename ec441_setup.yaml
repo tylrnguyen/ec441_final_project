@@ -1,0 +1,37 @@
+#cloud-config
+# EC 441 — Linux VM Provisioning
+# Usage: multipass launch --name ec441 --cpus 2 --memory 4G --disk 20G --cloud-init ec441_setup.yaml 24.04
+
+runcmd:
+  # Pre-answer interactive installer prompts before apt runs
+  - echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+  - echo "iperf3 iperf3/start_daemon boolean false" | debconf-set-selections
+
+  # Update package lists and apply security patches
+  - apt-get update -qq
+  - DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -q
+
+  # Install all system packages
+  - DEBIAN_FRONTEND=noninteractive apt-get install -y -q
+      iproute2 iputils-ping traceroute dnsutils net-tools
+      tcpdump tshark wireshark-common
+      iperf3 nmap netcat-openbsd openssl
+      curl wget
+      python3 python3-pip python3-venv
+      build-essential git
+      mininet
+
+  # Add ubuntu user to wireshark group (non-root packet capture)
+  - usermod -aG wireshark ubuntu
+
+  # Install uv as the ubuntu user
+  - sudo -u ubuntu bash -c 'curl -LsSf https://astral.sh/uv/install.sh | sh'
+
+  # Create shared Python virtual environment
+  - sudo -u ubuntu bash -c '/home/ubuntu/.local/bin/uv venv /home/ubuntu/.venv/ec441'
+
+  # Install Python packages into the venv
+  - sudo -u ubuntu bash -c '/home/ubuntu/.local/bin/uv pip install --python /home/ubuntu/.venv/ec441 pyshark scapy matplotlib marimo'
+
+  # Auto-activate venv on login
+  - sudo -u ubuntu bash -c "echo 'source ~/.venv/ec441/bin/activate' >> /home/ubuntu/.bashrc"
