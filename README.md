@@ -50,6 +50,23 @@ multipass stop ec441
 
 ## Parsers Overview
 
+## Dashboard
+
+The interactive dashboard is a Next.js application located in the `dashboard/` folder.
+
+Prerequisites: Node.js and npm installed.
+
+Run the dashboard locally:
+
+```bash
+cd dashboard
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser. 
+
+
 ## TCP Parser
 
 ### Analyzes: 
