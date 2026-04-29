@@ -1,3 +1,10 @@
 *.pcap
+*.pcapng
 __pycache__/
 .DS_Store
+ec441/
+outputs/
+data/
+node_modules/
+.next/
+.venv/
