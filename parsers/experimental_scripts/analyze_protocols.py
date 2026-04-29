@@ -12,6 +12,8 @@ if len(sys.argv) < 2:
     print("Usage: python analyze_protocols.py <netflix|meet|discord>")
     sys.exit(1)
 
+app = sys.argv[1].lower()
+
 if app not in PCAP_FILES:
     print(f"Unknown app: {app}")
     sys.exit(1)
