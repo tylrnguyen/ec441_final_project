@@ -175,7 +175,7 @@ export default function NetStressDashboard({ initialData }: { initialData: DashD
         <div className="flex items-center gap-3 mb-1.5">
           <div>
             <h1 className="text-[26px] font-black tracking-tight text-white" style={{ fontFamily: "var(--font-playfair), serif" }}>NetStress</h1>
-            <p className="text-xs text-white/35">Application Transport Under Duress | EC 441</p>
+            <p className="text-xs text-white/35">Application Transport Under Duress | EC 441 | Ellen, Melinda, Tyler</p>
           </div>
         </div>
       </div>
